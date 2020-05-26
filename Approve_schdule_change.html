@@ -1,0 +1,109 @@
+<html>
+
+<head>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="index.css">
+
+
+</head>
+<!-- #e1b382 -->
+<body style="background:white;">
+
+<div style="border-bottom: solid 5px darkblue;padding-bottom:1%;">
+
+<div style="background:#F8F8F8;">
+<a href="#" id="linkref" style="margin:5px;margin-right:0px;padding:0px;"><img src="images/log.png" width="50px" height="50px" /></a>
+<a href="#" id="linkref" style="color:brown;margin:5px;margin-left:0px;font-size:16px;padding:0px;" ><b>TUTORING APP</b></a>
+<a href="index.html" id="linkButton" style="color:brown;" > <i class="fa fa-sign-out" aria-hidden="true"></i> Sign Out </a>
+<a href="sign_in.html" id="linkButton" style="color:gray;" > <i class="fa fa-bell" aria-hidden="true"></i> Notification </a>
+<a href="sign_in.html" id="linkButton" style="color:brown;" > <i class="fa fa-envelope" aria-hidden="true"></i> Message </a>
+</div>
+
+<div style="margin-top:4%;">
+<div class="nava" >
+
+<a href="#tutors" id="linkref4"> Welcome</a>
+<a href="#tutees" id="linkref4"> My Profile </a>
+<a href="#tutoringCenter" id="linkref4"> My Tutees</a>
+<a href="#courses" id="linkref4">My Schedule</a>
+</div>
+
+</div>
+</div>
+<div class="main" style="margin-left:5%;width:auto;">
+  <h4> Respond to Session information update </h4>
+  <hr>
+  <table id="respondTable" style="width:100%;margin-bottom:1%;background-color:white;">
+    <tr>
+      <th>Name</th>
+      <th>Course</th>
+      <th>Time</th>
+      <th>Language Preference</th>
+      <th>Study Area</th>
+      <th>Complete</th>
+    </tr>
+    <tr>
+      <td> Tester </td>
+      <td> <span id="course_approve"></span></td>
+      <td> <ul style="text-align:left;">
+<li>Tuesday(12-13)</li>
+ <li>Friday (12-14)</li> </ul></td>
+      <td>
+        <span style="padding:10px;" id="lang_approve"></span>
+      </td>
+      <td>
+       <span style="padding:10px;" id="area_approve"></span>
+      </td>
+      <td>
+        <div class="btn dropdown" >
+          <button class="dropbtn">Respond</button>
+          <div class="dropdown-content" style="margin-top:0px;margin-left:0px;padding:0px;">
+            <a onclick="removeRow()">Confirm</a>
+            <a onclick="removeRow()">Deny</a>
+          </div>
+        </div></td>
+      </tr>
+
+      </table>
+      <h4 id="success" style="padding:20px 170px 30px 0px;display:none;">Barbie!You have successfully responded to Tester's request.<i class="fa fa-smile-o" aria-hidden="true" ></i></h4>
+
+</div>
+<script>
+  var course_2 = document.getElementById("course_approve");
+  var lang = document.getElementById("lang_approve");
+  var area = document.getElementById("area_approve");
+
+  var initial_lang = localStorage.getItem("primary_preference_language");
+  var updated_lang = localStorage.getItem("updated_language");
+
+  var initial_area = localStorage.getItem("area");
+  var updated_area = localStorage.getItem("updated_area");
+
+  course_2.innerHTML = localStorage.getItem("course");
+  lang.innerHTML = updated_lang;
+  area.innerHTML = updated_area;
+
+  if(initial_lang != updated_lang){
+    lang.style.backgroundColor = 'pink';
+  }
+  if(initial_area != updated_area){
+    area.style.backgroundColor = 'pink';
+  }
+
+</script>
+<script src="index.js"></script>
+
+
+</body>
+</html>

@@ -63,7 +63,7 @@ table tr{
 .dropbtn {
   background-color:transparent;
   color: white;
-  
+
   font-size: 16px;
   border: none;
 }
@@ -311,7 +311,7 @@ table.timeButtons th, td{
   padding:5px;
   border: solid 1px #f5f5f5;
   float:left;
-  margin-right: 10px;
+  margin-right: 8px;
 }
 
 table th{

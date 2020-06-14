@@ -126,13 +126,49 @@
       <br>
       <label for="start"> Start time:</label>
         <br>
-        <input type="time" id="startTime" name="startTime"><br><br>
+
+        <!-- <input type="time" id="startTime" name="startTime" min="09:00" max="17:00" > -->
+        <input type="text" list="start_time" name="start_time"  autocomplete="off">
+        <datalist id="start_time" >
+          <option value="9:00">
+          <option value="10:00">
+          <option value="11:00">
+          <option value="12:00">
+            <option value="13:00">
+              <option value="14:00">
+                <option value="15:00">
+                  <option value="16:00">
+
+</datalist>
+        <br><br>
         <label for="end"> End time:</label>
           <br>
-          <input type="time" id="endTime" name="endTime"><br><br>
+
+          <!-- <input type= "time" id="endTime" name="endTime" min="09:00" max="17:00"> -->
+          <input type="text" list="end_time" name="end_time"  autocomplete="off">
+          <datalist id="end_time" >
+
+          <option value="10:00">
+          <option value="11:00">
+          <option value="12:00">
+            <option value="13:00">
+              <option value="14:00">
+                <option value="15:00">
+                  <option value="16:00">
+                    <option value="17:00">
+                </datalist>
+
+
+
+          <br><br>
           <button onclick="addTime(); return false;" id="addTimeButton"
-          class="btn"> <span class="glyphicon glyphicon-plus"></span>Add Time </button>
+          class="btn">
+
+          <span class="glyphicon glyphicon-plus"></span>Add Time </button>
+
           <input type="submit" value="Continue" id="continueButton" class="btn" onclick="checkInput('2'); return false;">
+
+
           <hr><div id="10"></div>
         </div>
         <div class="loader" id="loading_2" style="display:none;"></div>

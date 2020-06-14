@@ -1,11 +1,19 @@
 body{
-  /* background-color: #4BB543; */
+  /* background-color: red; */
   background-color: white;
   position: relative;
   font-family:Roboto;
   font-size:16px;
-
 }
+/* input{
+  border-radius:15px;
+
+} */
+
+button{
+  border-radius: 15px;
+}
+
 .nav{
   margin-top: 1px;
   padding: 12px;
@@ -271,10 +279,10 @@ ul.nav-pills {
     height: 200px;
     font-size: 18px;
   }
-  #tutors,#tutees,#tutoringCenter,#study_areas,#courses {color: black; background-color: #F8F8F8;}
+  #tutors,#tutees,#tutoringCenter,#study_areas,#courses,#events,#announcement,#about{color: black; background-color: #F8F8F8;}
 
   @media screen and (max-width: 810px) {
-    #tutors, #tutees, #tutoringCenter, #study_areas, #courses  {
+    #about,#tutors, #tutees, #tutoringCenter, #study_areas, #courses#events,#announcement{
       margin-left: 150px;
     }
 }

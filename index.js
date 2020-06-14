@@ -14,7 +14,7 @@ window.addEventListener('load', (event) => {
             document.getElementById('confirm').style.display = 'block';
 
           }
-          if(color == "rgb(255, 255, 0)"){
+          if(color == "rgb(255, 255, 0)" || color == "rgb(255, 192, 203)" ){
             this.style.background = "#b19cd9";
 
             this.innerHTML = "Pending <br> <p id='cancelRequest'>Cancel</p>";
@@ -105,7 +105,7 @@ window.addEventListener('load', (event) => {
       render("study_area.html");
     }
     else if(id == '4'){
-      localStorage.setItem("area","Library");
+      //localStorage.setItem("area","Library");
       render("tutor_search.html");
     }
     else if(id == '5'){
@@ -116,22 +116,32 @@ window.addEventListener('load', (event) => {
     }
     return true;}
 
-    //load a different content
     function render(page){
       setTimeout(function(){
         window.location.href = page;
       }, 300);
     }
 
+
     //Add tutoring session time
     function addTime(){
       var time = document.getElementById("addTimeButton");
       var next = document.getElementById("continueButton");
+      var time_parent = time.parentElement;
+      var next_parent = next.parentElement;
+
       var div1 = document.getElementById('moreTime');
-      var div2 = document.getElementById('10');
+
+      var parent = div1.parentElement;
+      // var div2 = document.getElementById('10');
+      // div2.innerHTML = div1.innerHTML;
+      var div2 = document.createElement('div');
       div2.innerHTML = div1.innerHTML;
-      $('#addTimeButton').appendTo('#11');
-      $('#continueButton').appendTo('#11');
+      parent.appendChild(div2);
+      $('#addTimeButton').appendTo(parent).detach();
+      $('#continueButton').appendTo(parent).detach();
+
+
     }
 
     //add course numbers to the datalist based on the selected course name
@@ -184,4 +194,12 @@ window.addEventListener('load', (event) => {
 
      document.getElementById("success").style.display ="block";
 
+   }
+
+   function choosePlace(place){
+     localStorage.setItem("area",place);
+   }
+
+   function chooseTutor(tutorName){
+     localStorage.setItem("tutorName",tutorName);
    }
